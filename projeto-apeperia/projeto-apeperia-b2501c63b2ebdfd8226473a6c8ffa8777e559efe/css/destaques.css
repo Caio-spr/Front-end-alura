@@ -1,0 +1,35 @@
+.destaques{
+   background-color: var(--azul-claro);
+   display: flex;
+   flex-direction:column;
+   align-items:center;
+}
+
+.destaques-titulo{
+   margin:2.5rem 0;
+   font-size:24px;
+   text-align: center;
+}
+
+.destaques-imagem{
+   width: 100vw;
+   max-width:560px;
+   margin:0;
+   box-shadow: 0 0;
+}
+
+.destaques-texto{
+   margin:0 1rem 2rem;
+   font-family: "opensans", sans-serif;
+   text-align:left;
+   font-size:19px;
+   line-height:1.5em;
+}
+
+#destaques-botao{
+   display: flex;
+   justify-content: center;
+   justify-self:center;
+   border: 1px solid var(--planos-cartao-mega);
+   color:var(--planos-cartao-mega);
+}
