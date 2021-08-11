@@ -1,0 +1,2 @@
+<!DOCTYPE html>
+html>(head>meta*2+title+link+link*2)+(body>header.header+main+footer.footer)
