@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+<script>
+	function pulaLinha(){
+		document.write("<br><br>");
+	}
+	function mostra(txt){
+		document.write(txt);
+	}
+	var inicio=30
+	function contar(inicio){
+		while(inicio<=40){
+			mostra(inicio+", ");
+			inicio=inicio+1
+
+			if(inicio==33||inicio==37){
+				inicio=inicio+1
+			}
+		}
+	}
+	contar(inicio);
+</script>

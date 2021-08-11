@@ -1,0 +1,98 @@
+<html style='background:lightgrey'>
+<canvas width="600" height="400"></canvas>
+<input type='color' onchange="enterPress">
+<button>corrrrr</button>
+<script>
+	var tela =document.querySelector("canvas");
+	var pincel= tela.getContext("2d");
+	pincel.fillStyle='grey';
+	pincel.fillRect(0,0,tela.width,tela.height);
+
+
+	function desenhaQuadradinho(cor,x,y,b,a){
+		pincel.fillStyle=cor;
+		pincel.fillRect(x,y,b,a);
+		pincel.fillStroke='black';
+		pincel.strokeRect(x,y,b,a);
+	}
+
+
+	function desenhaCirculo(cor,x,y,r){
+		pincel.fillStyle=cor;
+		pincel.beginPath();
+		pincel.arc(x,y,r,0,2*3.14);
+		pincel.fill();
+	}
+
+
+	
+	var click=false;
+	var r=10;
+	tela.onmousedown=function(event){
+		click=true;
+		if(event.shiftKey){
+			r=r+10;
+			if(r>40){
+				r=20
+			}
+		}
+		if(event.ctrlKey){
+			r=r-5
+			if(r<10){
+				r=10;
+			}
+		}
+	}
+	tela.onmouseup=function(){
+		click=false;
+	}
+	
+
+	var i=0;
+	var input=document.querySelector('input');
+	var cores='input';
+	var button=document.querySelector('button');
+	button.onclick=verifica;
+	var enter=false;
+
+
+	function verifica(){
+			cores=[input.value];
+			input.focus();
+		}
+
+
+	function enterPress(event){
+		console.log(event);
+		if(event.code=='Enter'){
+			console.log(enter);
+			verifica();
+				
+		}
+	}
+
+
+	tela.oncontextmenu= function(event){
+		event.preventDefault();
+		i++;
+		if(i==cores.length){
+			i=0;
+		}
+		console.log(cores[i]);
+	}
+	
+	
+		
+	function fazDesenho(event){
+		var x= event.pageX - tela.offsetLeft;
+		var y= event.pageY  - tela.offsetTop;
+		if(click==true){
+			desenhaCirculo(cores[i],x,y,r);
+		}
+	}
+
+
+	tela.onmousemove=fazDesenho;
+	document.onkeydown=enterPress;
+</script>
+</html>

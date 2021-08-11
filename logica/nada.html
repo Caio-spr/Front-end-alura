@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+<script>
+	function pulaLinha(){
+		document.write("<br>");
+	}
+	function texto(txt){
+		document.write("<p>"+txt+"</p>");
+		pulaLinha();
+	}
+	function titulo(titulo){
+		texto("<h3>" + titulo + "</h3>");
+	}
+//a ideia é tentar fazer operações com conjuntos
+	var conjuntoA=[1,2,3,4,5,6,7,8];
+	var conjuntoB=[1,3,5,7];
+	var conjuntoC=[2,4,6,8];
+
+
+	titulo("O conjunto A é formado por A={" + conjuntoA+ "}, o conjunto B={" + conjuntoB + "} e o conjunto C={" + conjuntoC + "}. Sabendo disso responda:");
+	texto("1.Qual os números comuns entre A e B? e entre B e C?");
+	texto("A interseção entre A e B é " + (conjuntoA &&  conjuntoB)+ ". Já entre B e C é 0. E entre A e C é " + (conjuntoA && conjuntoC) + ".");
+//quando precisar de várias informações na variável usar *"[]"* e não "()"
+</script>

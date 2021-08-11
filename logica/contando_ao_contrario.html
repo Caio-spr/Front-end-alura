@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<script>
+	function pulaLinha(){
+		document.write("<br><br>");
+	}
+
+	function mostra(txt){
+		document.write(txt);
+	}
+
+
+	function contar(inicio,fim){
+		
+		while(inicio>=fim){
+			mostra(inicio+ ", ");
+			inicio=inicio-1
+		}
+		mostra(inicio);
+		if (inicio<=fim){
+			pulaLinha();
+			mostra("FIM");
+		}
+	}
+	contar(20,1);
+	//para parar no que você quer o parametro "fim" tem que ser o número anterior.
+</script>

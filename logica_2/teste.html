@@ -1,0 +1,39 @@
+<html style='background:grey'>
+<canvas width="600" height="400"></canvas>
+
+<script>
+	var tela =document.querySelector("canvas");
+	var pincel= tela.getContext("2d");
+	function desenhaQuadradinho(cor,x,y,b,a){
+		pincel.fillStyle=cor;
+		pincel.fillRect(x,y,b,a);
+		pincel.fillStroke='black';
+		pincel.strokeRect(x,y,b,a);
+	}
+	function quadradinhoLinha(cor,x,y,b,a){
+		while(x<600){
+			desenhaQuadradinho(cor,x,y,b,a);
+			x=x+b;
+		}
+	}
+	function quadradinhoColuna(cor,x,y,b,a){
+		while(y<400){
+			desenhaQuadradinho(cor,x,y,b,a);
+			y=y+a;
+		}
+	}
+	function quadradinhoTudo(cor,x,y,b,a){
+		while(x<600&&y<400){
+			quadradinhoColuna(cor,x,y,b,a);
+			x=x+b;
+		}
+		/* ou:
+		while(x<600&&y<400){
+			quadradinhoLinha(cor,x,y,b,a);
+			y=y+a;
+		}
+		*/
+	}
+	quadradinhoTudo("white",0,0,50,50);
+</script>
+</html>

@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<script>
+	function pulaLinha(){
+		document.write("<br><br>");
+	}
+	function mostra(txt){
+		document.write(txt);
+	}
+	var pares=2
+	mostra("os números pares <100 são: ");
+	pulaLinha();
+	function numerosPares(pares){
+		while(pares<=100){
+			mostra(pares+", ");
+			pares=pares+2;
+		}
+	}
+	numerosPares(pares);
+</script>

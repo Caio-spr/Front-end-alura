@@ -1,0 +1,137 @@
+<html style='background:lightgrey'>
+<canvas width="600" height="400"></canvas>
+<script>
+
+   
+
+	function limpaTela(){
+			pincel.clearRect(0,0,tela.width,tela.height);
+	}
+
+    function desenhaCirculo(cor,x,y,raio){
+		pincel.fillStyle=cor;
+		pincel.beginPath();
+		pincel.arc(x,y,raio,0,2*Math.PI);
+		pincel.fill();
+	}
+	
+	function desenhaQuadrado(cor,x,y,b,a){
+		pincel.fillStyle=cor;
+		pincel.fillRect(x,y,b,a);
+		pincel.fillStroke='black';
+		pincel.strokeRect(x,y,b,a);
+	}
+	function desenhaTriangulo(cor,p0x,p0y,l1x,l1y,l2x,l2y){
+    	pincel.fillStyle=cor;
+    	pincel.beginPath();
+    	pincel.moveTo(p0x,p0y);
+    	pincel.lineTo(l1x,l1y);
+    	pincel.lineTo(l2x,l2y);
+    	pincel.fill();
+    	pincel.fillStroke='black';
+    }
+    function lidaComMovimentoDoMouse(evento) {
+
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+
+        
+
+		
+		if(desenha==true) {
+
+            desenhaCirculo(corAtual,x, y, 5);
+        }
+    }
+
+    function habilitaDesenhar(evento) {
+
+    	var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+        desenha = true;
+
+
+        if (x>tamanhoQuadrados*0&&
+			x<tamanhoQuadrados*1&&
+			y>yQuadrados&&
+			y<tamanhoQuadrados&&
+			desenha){
+
+			desabilitaDesenhar();
+			corAtual='red';
+			console.log(corAtual,x,y);
+		}
+		
+
+		if (x>tamanhoQuadrados*1&&
+			x<tamanhoQuadrados*2&&
+			y>yQuadrados&&
+			y<tamanhoQuadrados&&
+			desenha){
+
+			desabilitaDesenhar();
+			corAtual='green';
+			console.log(corAtual,x,y);
+		}
+		
+		if (x>tamanhoQuadrados*2&&
+			x<tamanhoQuadrados*3&&
+			y>yQuadrados&&
+			y<tamanhoQuadrados&&
+			desenha){
+
+
+			desabilitaDesenhar();
+			corAtual="blue";
+			console.log(corAtual,x,y);
+		}
+    }
+
+    function desabilitaDesenhar() {
+
+        desenha = false;
+    }
+	
+    
+	var x = function determinaX(evento){
+		evento.pageX - tela.offsetLeft;
+	}
+
+    var y = function determinaY(evento){
+    	evento.pageY - tela.offsetTop;
+    }
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    var desenha = false;
+    var corAtual = 'blue';
+    var xVermelho = 0;
+    var xVerde  = 50;
+    var xAzul = 100;
+    var yQuadrados = 0;
+    var tamanhoQuadrados = 50;
+
+
+	console.log(corAtual);
+
+	pincel.fillStyle = 'grey';
+	
+    pincel.fillRect(0, 0, tela.width, tela.height);
+    
+
+    tela.onmousemove = lidaComMovimentoDoMouse;
+
+    tela.onmousedown = habilitaDesenhar;
+
+    tela.onmouseup = desabilitaDesenhar;
+
+
+    desenhaQuadrado('red',xVermelho,yQuadrados,tamanhoQuadrados,tamanhoQuadrados);
+	desenhaQuadrado('green',xVerde,yQuadrados,tamanhoQuadrados,tamanhoQuadrados);
+	desenhaQuadrado('blue',xAzul,yQuadrados,tamanhoQuadrados,tamanhoQuadrados);
+
+
+  
+
+</script>
+</html>

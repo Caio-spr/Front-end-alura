@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+<h3>Álcool ou Gasolina?</h3>
+<script>
+	function pulaLinha(){
+
+		document.write("<br>");
+	}
+	function texto(txt){
+
+		document.write(txt);
+		pulaLinha();
+	}
+
+	var tanque= 40;
+	var caminhoGasolina= 480;
+	var consumoGasolina= caminhoGasolina/tanque;
+	var caminhoAlcool= 400;
+	var consumoAlcool= caminhoAlcool/tanque;
+
+	texto("num caminho de " + caminhoGasolina + "km são consumidos " + tanque + " litros de gasolina");
+
+	pulaLinha();
+
+	texto("qual é a distância por litro de gasolina deste carro?");
+
+	
+	texto("R: " + consumoGasolina + "km");
+	
+	pulaLinha();
+
+	texto("Considere que o trajeto de " + caminhoAlcool + " km foi feito usando alcool, calcule o consumo de alcool pelo mesmo carro.");
+	pulaLinha();
+	document.write("R: " + consumoAlcool + " km");
+</script>

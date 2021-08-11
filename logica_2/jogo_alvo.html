@@ -1,0 +1,62 @@
+<html style='background:grey'>
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+   function desenhaCirculo(cor,x,y,raio){
+        pincel.fillStyle=cor;
+        pincel.beginPath();
+        pincel.arc(x,y,raio,0,2*Math.PI);
+        pincel.fill();
+        console.log(cor,x,y,raio);
+    }
+
+    function limpaTela(){
+        pincel.clearRect(0,0,tela.width,tela.height);
+    }
+    function sorteia(){
+
+        cX = Math.round(Math.random()*(tela.width-raio+20));
+        cY = Math.round(Math.random()*(tela.height-raio+20));
+
+        if(cX<raio+20){
+            cX=raio+20
+        }
+        if(cY<raio+20){
+            cY=raio+20
+        }
+    }
+    function alvo(){
+        sorteia();
+        limpaTela();
+
+        desenhaCirculo('red',cX,cY, raio + 20, ); 
+        desenhaCirculo('white',cX,cY, raio + 10 );
+        desenhaCirculo('red',cX,cY, raio);     
+    }
+    function dispara(event) {
+        console.log(event);
+        var x = event.pageX - tela.offsetLeft;
+        var y = event.pageY - tela.offsetTop;
+
+        if (x<cX+raio &&
+        	x>cX-raio &&
+            y<cY+raio &&
+        	y>cY-raio){
+
+        	alert('acertou');
+        }
+    }
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    var raio = 10;
+    var cX;
+    var cY;
+
+    setInterval(alvo,1000);
+    tela.onclick = dispara;
+   
+</script>
+</script>
+</html>

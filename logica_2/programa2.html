@@ -1,0 +1,115 @@
+<html style='background:lightgrey'>
+<canvas width="600" height="400"></canvas>
+
+<script>
+	function mostra(txt){
+		document.write(txt)
+		document.write("<br>")
+	}
+	var tela =document.querySelector("canvas");
+	var pincel= tela.getContext("2d");
+
+
+	function desenhaQuadrado(cor,x,y,b,a){
+		pincel.fillStyle=cor;
+		pincel.fillRect(x,y,b,a);
+		pincel.fillStroke='black';
+		pincel.strokeRect(x,y,b,a);
+	}
+	function quadradoLinha(cor,x,y,b,a){
+		while(x<tela.width){
+			desenhaQuadrado(cor,x,y,b,a);
+			x=x+b;
+		}
+	}
+	function quadradoColuna(cor,x,y,b,a){
+		while(y<tela.height){
+			desenhaQuadrado(cor,x,y,b,a);
+			y=y+a;
+		}
+	}
+	function quadradoTudo(cor,x,y,b,a){
+		while(x<600){
+			desenhaQuadrado(cor,x,y,b,a);
+			x=x+b;
+
+		}
+		x=x-b;
+		while(y<400&&x>=0){
+			desenhaQuadrado(cor,x,y,b,a);
+			y=y+a;
+			if(y==400){
+				y=0;
+				x=x-b;
+			}
+		}
+	}
+	/*
+						||
+		function quadradinhoTudo(cor,x,y,b,a){
+		while(x<600&&y<400){
+			quadradoColuna(cor,x,y,b,a);
+			x=x+b;
+		}
+	}
+						||
+	   	function quadradinhoTudo(cor,x,y,b,a){
+		while(x<600&&y<400){
+			quadradoLinha(cor,x,y,b,a);
+			y=y+a;
+		}
+	}
+	*/
+	function desenhaCirculo(cor,x,y,r){
+		pincel.fillStyle=cor;
+		pincel.beginPath();
+		pincel.arc(x,y,r,0,2*3.14);
+		pincel.fill();
+	}
+	  function desenhaTexto(x, y, texto) {
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+
+        pincel.font='15px Georgia';
+        pincel.fillStyle='black';
+        pincel.fillText(texto, x, y);    
+    }
+	function representaFracao(n,d){
+		var coluna=0;
+		desenhaTexto(0,0,txt);	
+		for(i=0;i<d;i++){
+
+			if(i<n){
+				desenhaQuadrado("green",coluna*50,50*(Math.floor(i/12)+1),50,50);
+			}
+			else{
+				desenhaQuadrado("white",coluna*50,50*(Math.floor(i/12)+1),50,50);
+
+			}
+			coluna++;
+			if(coluna>=12){
+				coluna=0;
+			}	
+		}	
+		mostra("a fração é "+ n + "/"+ d);		
+	}
+	 function desenhaBarra(x, y, serie, cores, texto) {
+        desenhaTexto(x,y+20,texto);
+        for(var i=0;i<serie.length;i++){
+            desenhaRet(cores[i],x,y,50,-serie[i]);
+            y=y-serie[i];
+        }
+    }
+    function desenhaTriangulo(cor,p0x,p0y,l1x,l1y,l2x,l2y){
+    	pincel.fillStyle=cor;
+    	pincel.beginPath();
+    	pincel.moveTo(p0x,p0y);
+    	pincel.lineTo(l1x,l1y);
+    	pincel.lineTo(l2x,l2y);
+    	pincel.fill();
+    	pincel.fillStroke='black';
+    }
+    quadradoLinha('green',0,0,50,50);
+
+</script>
+</html>

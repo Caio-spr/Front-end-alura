@@ -1,0 +1,35 @@
+<meta charset="utf-8">
+<script>
+//teste pra saber se eu entendi como usa as funções sem ter a cola no lado
+
+	function pulaLinha(){
+		document.write("<br><br>");
+	}
+	function mostra(txt){
+		document.write(txt);
+		pulaLinha();
+	}
+	function calculaVelocidade(dist,tempo){
+		var velocidade= dist/tempo;
+		return velocidade + "m/s";
+	}
+	function calculaArea(base,altura){
+		var area= base*altura;
+		return area + "m²";
+	}
+	function calculaConsumo(dist,tanque){
+		var consumo= dist/tanque
+		return consumo + "km/l"
+	}
+
+	mostra("a velocidade é: " + calculaVelocidade(30,3));
+//resultado é pra ser "a velocidade é: 10m/s"
+
+	mostra("a Área deste belo quadrado é: " + calculaArea(10,10));
+//resultado é pra ser "a Área deste belo quadrado é: 100m²"
+
+	mostra("o consumo desse carro é de: " + calculaConsumo(50,5));
+//resultado é pra ser "o consumo desse carro é de: 10km/l"
+
+//deu certo :)
+</script>

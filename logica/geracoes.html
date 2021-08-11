@@ -1,0 +1,28 @@
+<meta charset="utf-8">
+<script>
+	function pulaLinha(){
+		document.write("<br>");
+	}
+	function mostra(txt){
+		document.write(txt);
+		pulaLinha();
+	}
+	function titulo(titulo){
+		mostra("<h1>" + titulo + "</h1>");
+		pulaLinha();
+	}
+
+
+	var inicio=1500;
+	var anoAtual=2021;
+	var idadeMedia=28;
+	var totalGeracoes= Math.round((anoAtual-inicio)/idadeMedia);
+	
+
+
+	titulo("cada geração se inicia em média de 28 em 28 anos, logo quantas gerações se passaram desde " +inicio + " até " + anoAtual + "?");
+
+	pulaLinha();
+
+	mostra("R: " + totalGeracoes);
+</script>

@@ -1,0 +1,67 @@
+<html style='background:lightgrey'>
+<canvas width="600" height="400"></canvas>
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, tela.width, tela.height);
+
+	function limpaTela(){
+			pincel.clearRect(0,0,tela.width,tela.height);
+	}
+
+    function desenhaCirculo(cor,x,y,raio){
+		pincel.fillStyle=cor;
+		pincel.beginPath();
+		pincel.arc(x,y,raio,0,2*Math.PI);
+		pincel.fill();
+	}
+	
+	function desenhaQuadrado(cor,x,y,b,a){
+		pincel.fillStyle=cor;
+		pincel.fillRect(x,y,b,a);
+		pincel.fillStroke='black';
+		pincel.strokeRect(x,y,b,a);
+	}
+	function desenhaTriangulo(cor,p0x,p0y,l1x,l1y,l2x,l2y){
+    	pincel.fillStyle=cor;
+    	pincel.beginPath();
+    	pincel.moveTo(p0x,p0y);
+    	pincel.lineTo(l1x,l1y);
+    	pincel.lineTo(l2x,l2y);
+    	pincel.fill();
+    	pincel.fillStroke='black';
+    }
+    function desenhaBandeiraBrasil(){
+    	limpaTela();
+	   	desenhaQuadrado('green',0,0,tela.width,tela.height);
+	   	desenhaTriangulo('yellow',300,50,50,200,550,200);
+	   	desenhaTriangulo('yellow',50,200,300,350,550,200);
+	   	desenhaCirculo('darkblue',300,200,100);
+   	}
+
+	function desenhaBandeiraAlemanha(){
+		limpaTela()
+	   	desenhaQuadrado('black',0,0,600,133);
+	   	desenhaQuadrado('red',0,133,600,133);
+	   	desenhaQuadrado('yellow',0,266,600,133);
+	}
+
+	var i=1;
+	function trocaBandeira(){
+		if (i==1) {
+			desenhaBandeiraAlemanha();
+			i++;
+		} else {
+			desenhaBandeiraBrasil();
+			i--;
+		}
+	}
+
+
+	setInterval(trocaBandeira,3000);
+
+</script>
+</html>

@@ -1,0 +1,30 @@
+<meta charset="utf-8">
+<script>
+
+	function pulaLinha(){
+
+		document.write("<br>");
+
+	}
+
+	function texto(txt){
+
+		document.write(txt);
+		pulaLinha();
+	}
+
+	function titulo(titulo){
+
+		document.write("<h1>" + titulo + "</h1>");
+		pulaLinha();
+	}
+	var anoAtual= 2042;
+	var idadeEu= anoAtual-2006;
+	var idadeIrmao= anoAtual-2003;
+	var difIdade= (idadeIrmao - idadeEu);
+
+	titulo("Qual a diferença de idade entre eu e meu irmão?");
+
+	texto("eu tenho " + idadeEu + ", meu irmao tem " + idadeIrmao + ", logo a diferença é de " + difIdade);
+
+</script>

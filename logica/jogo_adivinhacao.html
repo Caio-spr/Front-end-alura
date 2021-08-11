@@ -1,0 +1,60 @@
+<meta charset="utf-8">
+<script>
+	function pulaLinha(){
+		document.write("<br><br>");
+	}
+	function mostra(txt){
+		document.write(txt);
+		pulaLinha();
+	}
+	var adivinhou=0
+	function adivinha(){
+
+		alert("jogo de adivinhação!!");
+
+		var n= parseInt(prompt("você quer sortear um número de 0 a quanto? Mínimo 10"));
+		while(n<10){
+			alert("erro");
+			n= parseInt(prompt("você quer sortear um número de 0 a quanto? Mínimo 10"));
+		}
+		var numeroPensado=Math.round(Math.random()*n);
+		var chances=parseInt(prompt("Quantas chances você quer?"));
+		var maximoChances=0;
+
+		while(chances>maximoChances){
+			var numeroRecebido=parseInt(prompt("diga um número de 0 a "+ n + ". Você tem "+ chances+" chances"));	
+
+			if (numeroPensado==numeroRecebido) {
+				adivinhou=true;	
+				mostra("parabéns!! você acertou!!");
+				break;
+				
+			}		 
+			if(numeroPensado>numeroRecebido){
+				alert("Que pena!! você errou! o número que pensei era maior que o que você me contou!");
+				chances--;
+			}
+			if (numeroPensado<numeroRecebido){
+				alert("Que pena!! você errou! o número que pensei era menor do que o que você me contou!");
+			chances--;
+			}
+		}
+	if (chances==maximoChances){
+		mostra("ACABARAM SUAS CHANCES MUAHAHHAHAHHAHAHAHAHAH")
+		adivinhou=false;
+		}
+		var repetir=prompt("para tentar novamente digite 'sim'");
+	if(adivinhou==false){
+		while(repetir=="sim"){
+			adivinha();
+			repetir=prompt("para tentar novamente digite 'sim'");
+		}
+	}else
+		mostra('FIM');
+	}
+	adivinha();
+	
+
+	
+
+</script>

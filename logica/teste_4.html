@@ -1,0 +1,31 @@
+<meta charset="utf-8">
+<script>
+	//a ideia é fazer as tabuadas até 10
+	function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+    function fazTabuada(){
+        var multiplos=1
+        var tabuada=1
+        mostra("A tabuada do " + tabuada + " é:");
+        pulaLinha();
+    	while(multiplos<=10&&tabuada<=10){
+    		mostra(tabuada +"x"+ multiplos+ " = " +tabuada*multiplos);
+    		multiplos++;
+            if(multiplos==11){
+                multiplos=1
+                tabuada++
+                pulaLinha();
+                mostra("A tabuada do " + tabuada + " é:");
+                pulaLinha();
+            }
+    	pulaLinha();
+   	}
+    fazTabuada();
+    
+</script>
