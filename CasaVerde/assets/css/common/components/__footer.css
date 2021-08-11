@@ -1,0 +1,50 @@
+.footer{   
+   background:var(--white) url(../../../img/icons/splash-footer.svg) no-repeat;
+   background-position: top -11rem right;
+   padding: 1.5rem;
+   width:100%;
+   height:100%;
+}
+
+.footer__logo{
+   max-width:11.125rem;
+   margin-bottom:1.25rem;
+}
+
+.footer__social{
+   display:flex;
+   margin-bottom:2rem;
+}
+
+.footer__social--icons{
+   display:inline-block;
+   width: 1.625rem;
+   height:1.625rem;
+   margin-right:1.625rem;
+}
+
+.footer__addresses{
+   margin-bottom:65px
+}
+
+.footer__address{
+   margin-top:34px;
+   line-height: 2rem;
+}
+
+
+
+
+
+
+/* erros :) */
+/* .footer__address__text{
+   margin-bottom:.5rem;
+}
+
+.footer__address__title{
+   margin-bottom:.5rem;
+}
+.footer_address__captions{
+   margin-bottom: .5rem;
+} */

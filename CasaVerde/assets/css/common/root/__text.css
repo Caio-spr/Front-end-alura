@@ -1,0 +1,54 @@
+:root{
+   font-size:16px;
+   font-family: var(--montserrat);
+   color:var(--grey);
+   line-height:26px;
+}
+
+.title{
+   font-size:var(--h3);
+   color:var(--black);
+}
+.title--alt{
+   font-family:var(--elsie);
+}
+
+.captions{
+   font-size: var(--cap);
+   line-height: 2rem;
+}
+
+.composed-title{
+   text-align: left;
+}
+.composed-title--alt{
+   text-align: center;
+}
+.composed-title--weak-row{
+   font-size:var(--cap);
+   margin-bottom:12px
+}
+.composed-title--strong-row{
+   color:var(--black);
+   font-family:var(--elsie);
+   font-size:var(--h3);
+   font-weight:var(--fw-900);
+   margin-bottom:1rem;
+   padding-bottom: 0;
+}
+
+.buy{
+   color:var(--yellow);
+   display: flex;
+   align-items: center;
+   text-decoration: none;
+}
+
+.buy-icon{
+   display:inline-block;
+   margin-left:2rem;
+   width:.875rem;
+   height:.875rem;
+   background-image: url(../../../img/icons/arrow.svg);
+}
+

@@ -1,0 +1,25 @@
+.button{
+   align-items:center;
+   background: var(--yellow);
+   box-shadow:10px 10px 30px var(--trans-yellow);
+   color: var(--white);
+   display: flex;
+   font-family: inherit;
+   font-size: 16px;
+   font-weight: var(--fw-700);
+   justify-content:center;
+   margin: 1rem 0;
+   padding: 2.25em 2em;
+   text-decoration: none;
+}
+
+.button--noback{
+   background: none;
+   border: 1px solid var(--yellow);
+   box-shadow: none;
+   color:var(--yellow);
+}
+
+.button--strong-yellow{
+   background: var(--strong-yellow);
+}

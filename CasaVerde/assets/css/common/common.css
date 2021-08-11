@@ -1,0 +1,7 @@
+@import url(root/_root.css);
+@import url(components/_all-components.css);
+
+.container{
+   padding:0 1rem 0 1rem;
+   margin-bottom:3rem;
+}

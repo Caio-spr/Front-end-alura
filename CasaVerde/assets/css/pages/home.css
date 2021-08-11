@@ -1,0 +1,32 @@
+.highlights{
+   background:var(--white) url(../../img/icons/splash-footer.svg) no-repeat;
+   background-position: top -4rem right;
+   padding-top:2.5rem;
+   position:relative;
+}
+.highlights__cap{
+   width:12.5rem;
+   line-height:2rem;
+   margin-bottom:1.55rem;
+}
+.highlights__img{
+   position:absolute;
+   top:20%;
+   right: 0;
+   height:50%;
+   width:50%;
+   /*   ? tive que mudar o posicionamento e o tamanho, copiando do vídeo tava em cima de tudo,
+         ?mas agora tá maior do que a página
+   */
+}
+
+.highlights__form{
+   position:relative;
+   z-index:2;
+}
+
+.products{
+   display:flex;
+   flex-flow:column nowrap;
+   align-items: center;
+}
